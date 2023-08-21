@@ -1,0 +1,15 @@
+services:
+  nginx_bot_s:
+    image: nginx-bot2
+    container_name: nginx_bot
+    ports : 
+      - "8080:80"
+    restart : unless-stopped
+    volumes:
+      -  nginx-log:/var/log/nginx
+      - /root/appl/nginx_3/conf:/etc/nginx/
+      - /root/appl/nginx_3/share/html:/usr/share/nginx/html 
+volumes:
+  nginx-log:
+  nginx-conf:/root/appl/nginx_3/conf
+  nginx-html:/root/appl/nginx_3/share/html

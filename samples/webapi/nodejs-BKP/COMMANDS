@@ -1,0 +1,34 @@
+/// https://www.weblearningblog.com/nodejs/running-a-nodejs-app-with-typescript-and-expressjs-in-docker-container/
+
+npm install
+
+npm run build
+
+docker build -t orenfe/oren_and_dudi_repo:oren_and_dudi_nodejs_typesctipt_jsonplaceholder .
+docker push orenfe/oren_and_dudi_repo:oren_and_dudi_nodejs_typesctipt_jsonplaceholder
+
+docker pull orenfe/oren_and_dudi_repo:oren_and_dudi_nodejs_typesctipt_jsonplaceholder
+
+docker run -it --rm -p 88:8080 -d --name oren_and_dudi_nodejs_typesctipt_jsonplaceholder orenfe/oren_and_dudi_repo:oren_and_dudi_nodejs_typesctipt_jsonplaceholder
+
+http://localhost:8080/posts/1
+http://localhost:8080/posts/
+
+http://localhost:88/posts/1
+http://localhost:88/posts/
+
+http://o-and-i.com:88/posts/1
+http://o-and-i.com:88/posts/
+
+docker images
+docker ps
+docker stop 372e628285bd
+
+
+USEFULL COMMANDS:
+lsof -i tcp:3000
+kill -9 PID
+
+kubectl apply -f deploy.yaml
+kubectl expose deployment oren-and-kobi-webapi --type=NodePort --name=oren-and-kobi-webapi-service
+http://localhost/Alive

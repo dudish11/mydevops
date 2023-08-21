@@ -1,0 +1,5 @@
+#docker build --tag orenplace .
+#docker build --tag ndposts .
+docker build --tag nodepost .
+docker-compose up 
+TEST http://vm-tdocker1:8090/posts

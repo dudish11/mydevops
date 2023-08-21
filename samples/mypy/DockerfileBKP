@@ -1,0 +1,18 @@
+# syntax=docker/dockerfile:1
+FROM python:3.7-alpine
+WORKDIR /code
+ENV FLASK_APP=app.py
+ENV FLASK_RUN_HOST=0.0.0.0
+#ENV http_proxy="http://10.9.5.140:8080"
+#ENV https_proxy="http://10.9.5.140:8080"
+#ENV no_proxy="vm-gitlab.bezeq.com"
+RUN apk add git
+RUN git clone http://vm-gitlab.bezeq.com/Infra/python.git
+#ENV http_proxy http://10.9.5.140:8080
+#ENV https_proxy http://10.9.5.140:8080
+RUN apk add --no-cache gcc musl-dev linux-headers
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
+EXPOSE 5000
+COPY . .
+CMD ["flask", "run"]

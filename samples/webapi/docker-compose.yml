@@ -1,0 +1,74 @@
+version: "3.4"
+
+services:
+    swagger-api:
+        image: orswager:latest  
+        ports:
+          - "8024:80"
+        restart: unless-stopped
+        depends_on:
+          - swagger-db
+
+    swagger-db:
+        image: "mcr.microsoft.com/mssql/server:2022-latest"
+        ports:
+          - "1433:1433"
+        restart: unless-stopped
+
+        environment:
+            SA_PASSWORD: "S3cur3P@ssW0rd!"
+            ACCEPT_EULA: "Y"
+
+
+    node-api:
+        image: nodepost:latest
+        restart: unless-stopped
+        ports:
+          - "8025:8080"
+
+
+    py1:
+        image: "mypy"
+        ports:
+        - "8091:5000"
+        restart: unless-stopped
+    py2: 
+        image: "mypy"
+        ports:
+        - "8092:5000"
+        restart: unless-stopped
+    py3:
+        image: "mypy"
+        ports:
+        - "8093:5000"
+        restart: unless-stopped
+    redis:
+        image: "redis:alpine"
+        restart: on-failure
+    
+    
+    webapi:
+        image: "orwebapi"
+        ports:
+        - "8022:80"
+        restart: unless-stopped
+    
+    mvc:
+        image: "ormvc:latest"
+        ports:
+        - "8021:80"
+        restart: unless-stopped
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        

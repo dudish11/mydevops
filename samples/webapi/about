@@ -1,0 +1,7 @@
+
+direct image pull - 
+
+docker pull -t orwebapi orenfe/oren_and_kobi_repo:oren_and_kobi_webapi
+docker image tag  orenfe/oren_and_kobi_repo:oren_and_kobi_webapi orwebapi:latest
+docker run --rm -d -p 8022:80 --restart unless-stopped --name webapi orwebapi:lates
+http://vm-tdocker1:8022/WeatherForecast

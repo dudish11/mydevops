@@ -1,0 +1,5 @@
+[root@vm-tdocker1 Oren0]# docker build -t orconsule .
+
+[root@vm-tdocker1 Oren0]# docker run -it --rm --name consule orconsule
+Hello, World!
+

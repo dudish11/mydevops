@@ -1,0 +1,28 @@
+services:
+  nginx-basic:
+    image: nginx-basic
+    container_name: nginx-basic-c
+    ports : 
+      - "8080:80"
+    restart : unless-stopped
+    volumes:
+      -  type: bind
+         source: "/appl/nginx-basic/html"
+         target: "/usr/share/nginx/html"
+      -  type: bind
+         source: "/appl/nginx-basic/nginx"
+         target: "/etc/nginx"
+      -  type: bind
+         source: "/appl/nginx-basic/log"
+         target: "/var/log/nginx"
+    env_file:
+      - "./environment"
+      
+
+#      -  type: volume
+#         nginx-log: /var/log/nginx 
+        
+#volumes:
+#  nginx-log:
+#  nginx-conf:/root/appl/nginx-bot144/conf
+#  nginx-html:/root/appl/nginx-bot144/share/html

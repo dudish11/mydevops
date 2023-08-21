@@ -1,0 +1,43 @@
+
+
+
+This example :
+  bind mounts ./ for dir : config , html , log  
+  volume mount
+  location  proxy-pass to tcmapi.bezeq.com
+  port : 8080->8080 
+  no conf.d
+  env proxy  exluded 
+================================================
+
+BUILD : docker build -t my-nginx  
+RUN   : docker-compose up -d 
+
+TEST : http://vm-tdocker1:8080/cmapi/
+TEST : http://vm-tdocker1/my-nginx/cmapi/
+
+services:
+  my-nginx:
+    image: nginx:latest
+    container_name: my-nginx
+    ports :
+      - "8080:8080"
+    restart : unless-stopped
+    volumes:
+      -  type: bind
+         source: "./html"
+         target: "/usr/share/nginx/html"
+      -  type: bind
+         source: "./nginx"
+         target: "/etc/nginx"
+      -  type: bind
+         source: "./log"
+         target: "/var/log/nginx"
+    env_file:
+      - "./environment"
+
+
+
+
+===============================================
+

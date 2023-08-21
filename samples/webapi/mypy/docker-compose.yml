@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  web1:
+    image: "mypy"
+    ports:
+      - "8091:5000"
+    restart: unless-stopped
+  web2:
+    image: "mypy"
+    ports:
+      - "8092:5000"
+    restart: unless-stopped
+  web3:
+    image: "mypy"
+    ports:
+      - "8093:5000"
+    restart: unless-stopped
+
+  redis:
+    image: "redis:alpine"
+    restart: on-failure
+#    restart: always 

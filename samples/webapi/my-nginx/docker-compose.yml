@@ -1,0 +1,30 @@
+services:
+  my-nginx:
+    image: my-nginx:latest
+    container_name: my-nginx
+    ports : 
+      - "8080:8080"
+    restart : unless-stopped
+    dns:
+      -  10.25.104.220
+    volumes:
+      -  type: bind
+         source: "./html"
+         target: "/usr/share/nginx/html"
+      -  type: bind
+         source: "./nginx"
+         target: "/etc/nginx"
+      -  type: bind
+         source: "./log"
+         target: "/var/log/nginx"
+    env_file:
+      - "./environment"
+      
+
+#      -  type: volume
+#         nginx-log: /var/log/nginx 
+        
+#volumes:
+#  nginx-log:
+#  nginx-conf:/root/appl/nginx-bot144/conf
+#  nginx-html:/root/appl/nginx-bot144/share/html

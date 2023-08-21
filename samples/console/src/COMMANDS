@@ -1,0 +1,14 @@
+
+dotnet --list-sdks
+dotnet new console -f net6.0
+
+kubectl drain docker-desktop --ignore-daemonsets --force
+kubectl get svc
+kubectl delete service oren_and_kobi_console
+docker build -t orenfe/oren_and_kobi_repo:oren_and_kobi_console .
+docker push orenfe/oren_and_kobi_repo:oren_and_kobi_console
+docker run -it --rm -p 8000:80 --name oren_and_kobi_console orenfe/oren_and_kobi_repo:oren_and_kobi_console
+http://localhost:8000/SayHello
+http://localhost:8000/WeatherForecast
+
+docker pull orenfe/oren_and_kobi_repo:oren_and_kobi_console

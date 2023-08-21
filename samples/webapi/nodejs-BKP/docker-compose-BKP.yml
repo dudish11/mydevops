@@ -1,0 +1,9 @@
+version: "3.4"
+
+services:
+    api:
+        image: orenfe/oren_and_dudi_repo:oren_and_dudi_nodejs_typesctipt_jsonplaceholder 
+        container_name: orenplaceholder
+        ports:
+          - "8090:8080"
+

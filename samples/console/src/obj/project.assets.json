@@ -1,0 +1,66 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    "net6.0": []
+  },
+  "packageFolders": {
+    "/Users/orenapps/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/Users/orenapps/Documents/PROJECTS/oren_and_kobi/oren_and_kobi_console/oren_and_kobi_console.csproj",
+      "projectName": "oren_and_kobi_console",
+      "projectPath": "/Users/orenapps/Documents/PROJECTS/oren_and_kobi/oren_and_kobi_console/oren_and_kobi_console.csproj",
+      "packagesPath": "/Users/orenapps/.nuget/packages/",
+      "outputPath": "/Users/orenapps/Documents/PROJECTS/oren_and_kobi/oren_and_kobi_console/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/Users/orenapps/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0": {
+        "targetAlias": "net6.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.400/RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

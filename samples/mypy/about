@@ -1,0 +1,2 @@
+SRC   : https://docs.docker.com/compose/gettingstarted/ Try Docker Compose
+docker logs python_2_web1_1|grep GET
